@@ -17,7 +17,7 @@ resource "aws_instance" "web" {
     type        = "ssh"
     host        = self.public_ip
     user        = "ubuntu"
-    private_key = file("~/.ssh/your_private_key")
+    private_key = file("${path.module}/root/terraform/terraform-assignment/test.pem)
   }
 
   provisioner "remote-exec" {
